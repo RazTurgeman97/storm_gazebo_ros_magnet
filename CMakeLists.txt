@@ -1,21 +1,30 @@
-cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.5)
 project(storm_gazebo_magnet)
 
-find_package(catkin REQUIRED COMPONENTS 
-  roscpp 
-  geometry_msgs 
-  )
-find_package(gazebo REQUIRED)
-include_directories(include ${GAZEBO_INCLUDE_DIRS} ${catkin_INCLUDE_DIRS})
-link_directories(${GAZEBO_LIBRARY_DIRS})
+# Find dependencies
+find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(ignition-gazebo6 REQUIRED)
+find_package(ignition-math6 REQUIRED)
 
-find_package(gazebo REQUIRED)
-find_package(Boost REQUIRED COMPONENTS thread)
-# set (CMAKE_CXX_FLAGS "-std=c++11")
-add_definitions(-std=c++11)
-list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS} -O2")
+# Include directories
+include_directories(include)
 
-
+# Add plugin library
 add_library(storm_gazebo_dipole_magnet SHARED src/dipole_magnet.cc)
-target_link_libraries(storm_gazebo_dipole_magnet ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES} ${Boost_LIBRARIES})
-  
+ament_target_dependencies(storm_gazebo_dipole_magnet
+    rclcpp
+    std_msgs
+    geometry_msgs
+    ignition-gazebo6
+    ignition-math6
+)
+
+# Install
+install(TARGETS storm_gazebo_dipole_magnet
+    DESTINATION lib/${PROJECT_NAME}
+)
+
+ament_package()

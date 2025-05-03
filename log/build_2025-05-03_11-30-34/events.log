@@ -1,0 +1,329 @@
+[0.000000] (-) TimerEvent: {}
+[0.000295] (storm_gazebo_magnet) JobQueued: {'identifier': 'storm_gazebo_magnet', 'dependencies': OrderedDict()}
+[0.000749] (storm_gazebo_magnet) JobStarted: {'identifier': 'storm_gazebo_magnet'}
+[0.005551] (storm_gazebo_magnet) JobProgress: {'identifier': 'storm_gazebo_magnet', 'progress': 'cmake'}
+[0.005913] (storm_gazebo_magnet) Command: {'cmd': ['/usr/bin/cmake', '/home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet', '-DCMAKE_INSTALL_PREFIX=/home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/install/storm_gazebo_magnet'], 'cwd': '/home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/build/storm_gazebo_magnet', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_IL:en'), ('USER', 'raz'), ('SSH_AGENT_PID', '2012354'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/raz'), ('OLDPWD', '/home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/src'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1963465'), ('SYSTEMD_EXEC_PID', '1963791'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '1968984'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'raz'), ('JOURNAL_STREAM', '8:15365063'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'raz'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/usr/lib/dotnet/dotnet:/home/raz/.cargo/bin:/home/raz/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/raz/.dotnet/tools'), ('SESSION_MANAGER', 'local/raz-lab:@/tmp/.ICE-unix/1963764,unix/raz-lab:/tmp/.ICE-unix/1963764'), ('INVOCATION_ID', 'eabdb786ba2e462999534ae64770f30c'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('RMW_IMPLEMENTAITON', 'rwm_cyclonedds_cpp'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('DOTNET_BUNDLE_EXTRACT_BASE_DIR', '/home/raz/.cache/dotnet_bundle_extract'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/tmp/ssh-XXXXXXwHXtDQ/agent.2012353'), ('ROS_DOMAIN_ID', '1'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:34791990-b6e8-48d7-a2be-a058309d3d6f'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/build/storm_gazebo_magnet'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.048709] (storm_gazebo_magnet) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.098582] (storm_gazebo_magnet) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.099945] (-) TimerEvent: {}
+[0.103896] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.187594] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.198491] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.198839] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.199366] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.200036] (-) TimerEvent: {}
+[0.202366] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.285201] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.291884] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.292121] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.292458] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.295052] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.300197] (-) TimerEvent: {}
+[0.400470] (-) TimerEvent: {}
+[0.411512] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.476452] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.500629] (-) TimerEvent: {}
+[0.510864] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.514682] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.520558] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.529208] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.540280] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.570624] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.572417] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.600786] (-) TimerEvent: {}
+[0.646422] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[0.681745] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[0.700879] (-) TimerEvent: {}
+[0.711313] (storm_gazebo_magnet) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.717435] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[0.787776] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[0.788166] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[0.801016] (-) TimerEvent: {}
+[0.883292] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[0.884788] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[0.901100] (-) TimerEvent: {}
+[0.926369] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found geometry_msgs: 4.8.0 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[0.935820] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-gazebo6 -- found version 6.17.0\n'}
+[0.940258] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-gazebo6\n'}
+[0.941890] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for sdformat12 -- found version 12.8.0\n'}
+[0.942240] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of sdformat12\n'}
+[0.946708] (storm_gazebo_magnet) StdoutLine: {'line': b"-- Checking for module 'tinyxml2'\n"}
+[0.957922] (storm_gazebo_magnet) StdoutLine: {'line': b'--   Found tinyxml2, version 9.0.0\n'}
+[0.997624] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[0.998205] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-math6\n'}
+[1.001215] (-) TimerEvent: {}
+[1.001493] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-utils1 -- found version 1.5.1\n'}
+[1.001880] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-utils1\n'}
+[1.006485] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-plugin1 -- found version 1.4.0\n'}
+[1.006877] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-plugin1\n'}
+[1.007477] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-plugin1> component [loader]\n'}
+[1.010029] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-plugin1-loader -- found version 1.4.0\n'}
+[1.010490] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-plugin1-loader\n'}
+[1.010954] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-plugin1> component [register]\n'}
+[1.013628] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-plugin1-register -- found version 1.4.0\n'}
+[1.014093] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-plugin1-register\n'}
+[1.017041] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-transport11 -- found version 11.4.1\n'}
+[1.017455] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-transport11\n'}
+[1.034381] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") \n'}
+[1.042318] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Config-file not installed for ZeroMQ -- checking for pkg-config\n'}
+[1.047033] (storm_gazebo_magnet) StdoutLine: {'line': b"-- Checking for module 'libzmq >= 4'\n"}
+[1.062311] (storm_gazebo_magnet) StdoutLine: {'line': b'--   Found libzmq , version 4.3.4\n'}
+[1.101441] (-) TimerEvent: {}
+[1.106441] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found ZeroMQ: TRUE (Required is at least version "4") \n'}
+[1.112981] (storm_gazebo_magnet) StdoutLine: {'line': b"-- Checking for module 'uuid'\n"}
+[1.129033] (storm_gazebo_magnet) StdoutLine: {'line': b'--   Found uuid, version 2.37.2\n'}
+[1.172166] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found UUID: TRUE  \n'}
+[1.172738] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-utils1 -- found version 1.5.1\n'}
+[1.173294] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-utils1\n'}
+[1.173507] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-utils1> component [cli]\n'}
+[1.176314] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-utils1-cli -- found version 1.5.1\n'}
+[1.176745] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-utils1-cli\n'}
+[1.180080] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-msgs8 -- found version 8.7.0\n'}
+[1.180469] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-msgs8\n'}
+[1.197924] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found suitable version "3.12.4", minimum required is "3") \n'}
+[1.198802] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.201694] (-) TimerEvent: {}
+[1.208052] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-transport11> component [log]\n'}
+[1.210278] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-transport11-log -- found version 11.4.1\n'}
+[1.210659] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-transport11-log\n'}
+[1.210941] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-transport11> component [parameters]\n'}
+[1.212652] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-transport11-parameters -- found version 11.4.1\n'}
+[1.212853] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-transport11-parameters\n'}
+[1.213552] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-msgs8 -- found version 8.7.0\n'}
+[1.215142] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-common4 -- found version 4.7.0\n'}
+[1.215372] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-common4\n'}
+[1.215445] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for dlfcn.h - found\n'}
+[1.216174] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for libdl - found\n'}
+[1.216970] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found DL: TRUE  \n'}
+[1.222695] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-common4> component [profiler]\n'}
+[1.224284] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-common4-profiler -- found version 4.7.0\n'}
+[1.224394] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-common4-profiler\n'}
+[1.224861] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-common4> component [events]\n'}
+[1.226375] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-common4-events -- found version 4.7.0\n'}
+[1.226492] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-common4-events\n'}
+[1.226948] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.227325] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-common4> component [av]\n'}
+[1.229146] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-common4-av -- found version 4.7.0\n'}
+[1.229417] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-common4-av\n'}
+[1.234805] (storm_gazebo_magnet) StdoutLine: {'line': b"-- Checking for module 'libswscale'\n"}
+[1.251483] (storm_gazebo_magnet) StdoutLine: {'line': b'--   Found libswscale, version 5.9.100\n'}
+[1.293160] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found SWSCALE: TRUE  \n'}
+[1.299784] (storm_gazebo_magnet) StdoutLine: {'line': b"-- Checking for module 'libavdevice >= 56.4.100'\n"}
+[1.301820] (-) TimerEvent: {}
+[1.316207] (storm_gazebo_magnet) StdoutLine: {'line': b'--   Found libavdevice , version 58.13.100\n'}
+[1.358026] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found AVDEVICE: TRUE (Required is at least version "56.4.100") \n'}
+[1.361408] (storm_gazebo_magnet) StdoutLine: {'line': b"-- Checking for module 'libavformat'\n"}
+[1.371865] (storm_gazebo_magnet) StdoutLine: {'line': b'--   Found libavformat, version 58.76.100\n'}
+[1.401945] (-) TimerEvent: {}
+[1.416784] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found AVFORMAT: TRUE  \n'}
+[1.423036] (storm_gazebo_magnet) StdoutLine: {'line': b"-- Checking for module 'libavcodec'\n"}
+[1.439701] (storm_gazebo_magnet) StdoutLine: {'line': b'--   Found libavcodec, version 58.134.100\n'}
+[1.483355] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found AVCODEC: TRUE  \n'}
+[1.489953] (storm_gazebo_magnet) StdoutLine: {'line': b"-- Checking for module 'libavutil'\n"}
+[1.502088] (-) TimerEvent: {}
+[1.505535] (storm_gazebo_magnet) StdoutLine: {'line': b'--   Found libavutil, version 56.70.100\n'}
+[1.547154] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found AVUTIL: TRUE  \n'}
+[1.550910] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-fuel_tools7 -- found version 7.3.1\n'}
+[1.551805] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-fuel_tools7\n'}
+[1.602247] (-) TimerEvent: {}
+[1.645736] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.81.0")  \n'}
+[1.657697] (storm_gazebo_magnet) StdoutLine: {'line': b"-- Checking for module 'jsoncpp'\n"}
+[1.674558] (storm_gazebo_magnet) StdoutLine: {'line': b'--   Found jsoncpp, version 1.9.5\n'}
+[1.702420] (-) TimerEvent: {}
+[1.716241] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found JSONCPP: TRUE  \n'}
+[1.722730] (storm_gazebo_magnet) StdoutLine: {'line': b"-- Checking for module 'libzip'\n"}
+[1.738730] (storm_gazebo_magnet) StdoutLine: {'line': b'--   Found libzip, version 1.11.3\n'}
+[1.779569] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found ZIP: TRUE  \n'}
+[1.780146] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-common4 -- found version 4.7.0\n'}
+[1.780593] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.781095] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-msgs8 -- found version 8.7.0\n'}
+[1.784720] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-gui6 -- found version 6.8.0\n'}
+[1.785295] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-gui6\n'}
+[1.802624] (-) TimerEvent: {}
+[1.812075] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.812233] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-common4 -- found version 4.7.0\n'}
+[1.812751] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-plugin1 -- found version 1.4.0\n'}
+[1.812930] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-transport11 -- found version 11.4.1\n'}
+[1.814696] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-rendering6 -- found version 6.6.3\n'}
+[1.814846] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-rendering6\n'}
+[1.815044] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.815361] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-math6\n'}
+[1.815438] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-math6> component [eigen3]\n'}
+[1.817071] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-math6-eigen3 -- found version 6.15.1\n'}
+[1.817318] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-math6-eigen3\n'}
+[1.822554] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-common4 -- found version 4.7.0\n'}
+[1.822767] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-common4\n'}
+[1.822959] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for dlfcn.h - found\n'}
+[1.823035] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for libdl - found\n'}
+[1.829769] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-common4> component [graphics]\n'}
+[1.831473] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-common4-graphics -- found version 4.7.0\n'}
+[1.831747] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-common4-graphics\n'}
+[1.832017] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.832205] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-utils1 -- found version 1.5.1\n'}
+[1.832668] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-common4> component [events]\n'}
+[1.833204] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-plugin1 -- found version 1.4.0\n'}
+[1.833386] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-plugin1\n'}
+[1.833458] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-plugin1> component [all]\n'}
+[1.835081] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for all libraries of ignition-plugin1 -- found version 1.4.0\n'}
+[1.835372] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-plugin1 -- found version 1.4.0\n'}
+[1.837083] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-msgs8 -- found version 8.7.0\n'}
+[1.850614] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-physics5 -- found version 5.3.2\n'}
+[1.850809] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-physics5\n'}
+[1.850993] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.851311] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-plugin1 -- found version 1.4.0\n'}
+[1.851491] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-utils1 -- found version 1.5.1\n'}
+[1.852321] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-physics5> component [heightmap]\n'}
+[1.853893] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-physics5-heightmap -- found version 5.3.2\n'}
+[1.854067] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-physics5-heightmap\n'}
+[1.854276] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-common4 -- found version 4.7.0\n'}
+[1.854534] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-physics5> component [mesh]\n'}
+[1.856188] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-physics5-mesh -- found version 5.3.2\n'}
+[1.856372] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-physics5-mesh\n'}
+[1.856535] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-common4 -- found version 4.7.0\n'}
+[1.857010] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-physics5> component [sdf]\n'}
+[1.858555] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-physics5-sdf -- found version 5.3.2\n'}
+[1.858829] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-physics5-sdf\n'}
+[1.858924] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for sdformat12 -- found version 12.8.0\n'}
+[1.860886] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6 -- found version 6.8.1\n'}
+[1.861091] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6\n'}
+[1.874331] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") \n'}
+[1.874760] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.875063] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-common4 -- found version 4.7.0\n'}
+[1.875246] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-transport11 -- found version 11.4.1\n'}
+[1.875551] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-rendering6 -- found version 6.6.3\n'}
+[1.875857] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-msgs8 -- found version 8.7.0\n'}
+[1.876143] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for sdformat12 -- found version 12.8.0\n'}
+[1.876452] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [air_pressure]\n'}
+[1.878169] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6-air_pressure -- found version 6.8.1\n'}
+[1.878460] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-air_pressure\n'}
+[1.878740] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [altimeter]\n'}
+[1.880371] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6-altimeter -- found version 6.8.1\n'}
+[1.880523] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-altimeter\n'}
+[1.880902] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [imu]\n'}
+[1.882488] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6-imu -- found version 6.8.1\n'}
+[1.882819] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-imu\n'}
+[1.883045] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [force_torque]\n'}
+[1.884639] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6-force_torque -- found version 6.8.1\n'}
+[1.885117] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-force_torque\n'}
+[1.885345] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [logical_camera]\n'}
+[1.887045] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6-logical_camera -- found version 6.8.1\n'}
+[1.887251] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-logical_camera\n'}
+[1.887585] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [magnetometer]\n'}
+[1.889207] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6-magnetometer -- found version 6.8.1\n'}
+[1.889386] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-magnetometer\n'}
+[1.889687] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [navsat]\n'}
+[1.891304] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6-navsat -- found version 6.8.1\n'}
+[1.891465] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-navsat\n'}
+[1.891775] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [rendering]\n'}
+[1.893331] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6-rendering -- found version 6.8.1\n'}
+[1.893593] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-rendering\n'}
+[1.893932] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [lidar]\n'}
+[1.895477] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6-lidar -- found version 6.8.1\n'}
+[1.895897] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-lidar\n'}
+[1.896195] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6 -- found version 6.8.1\n'}
+[1.896622] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [gpu_lidar]\n'}
+[1.898329] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6-gpu_lidar -- found version 6.8.1\n'}
+[1.898581] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-gpu_lidar\n'}
+[1.898813] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6 -- found version 6.8.1\n'}
+[1.899398] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [camera]\n'}
+[1.900729] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6-camera -- found version 6.8.1\n'}
+[1.901012] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-camera\n'}
+[1.901258] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6 -- found version 6.8.1\n'}
+[1.901772] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [boundingbox_camera]\n'}
+[1.902657] (-) TimerEvent: {}
+[1.903315] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6-boundingbox_camera -- found version 6.8.1\n'}
+[1.903494] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-boundingbox_camera\n'}
+[1.903849] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [segmentation_camera]\n'}
+[1.905452] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6-segmentation_camera -- found version 6.8.1\n'}
+[1.905664] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-segmentation_camera\n'}
+[1.905979] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [depth_camera]\n'}
+[1.907599] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6-depth_camera -- found version 6.8.1\n'}
+[1.907812] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-depth_camera\n'}
+[1.908062] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6 -- found version 6.8.1\n'}
+[1.908493] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [rgbd_camera]\n'}
+[1.910049] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6-rgbd_camera -- found version 6.8.1\n'}
+[1.910248] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-rgbd_camera\n'}
+[1.910479] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6 -- found version 6.8.1\n'}
+[1.910908] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for <ignition-sensors6> component [thermal_camera]\n'}
+[1.912444] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6-thermal_camera -- found version 6.8.1\n'}
+[1.912716] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Searching for dependencies of ignition-sensors6-thermal_camera\n'}
+[1.913052] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-sensors6 -- found version 6.8.1\n'}
+[1.913797] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-rendering6 -- found version 6.6.3\n'}
+[1.914017] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.915907] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-utils1 -- found version 1.5.1\n'}
+[1.929440] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[1.972510] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.981006] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Generating done\n'}
+[1.984107] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Build files have been written to: /home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/build/storm_gazebo_magnet\n'}
+[1.992385] (storm_gazebo_magnet) CommandEnded: {'returncode': 0}
+[1.992633] (storm_gazebo_magnet) JobProgress: {'identifier': 'storm_gazebo_magnet', 'progress': 'build'}
+[1.993222] (storm_gazebo_magnet) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/build/storm_gazebo_magnet', '--', '-j24', '-l24'], 'cwd': '/home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/build/storm_gazebo_magnet', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_IL:en'), ('USER', 'raz'), ('SSH_AGENT_PID', '2012354'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/raz'), ('OLDPWD', '/home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/src'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1963465'), ('SYSTEMD_EXEC_PID', '1963791'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '1968984'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'raz'), ('JOURNAL_STREAM', '8:15365063'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'raz'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/usr/lib/dotnet/dotnet:/home/raz/.cargo/bin:/home/raz/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/raz/.dotnet/tools'), ('SESSION_MANAGER', 'local/raz-lab:@/tmp/.ICE-unix/1963764,unix/raz-lab:/tmp/.ICE-unix/1963764'), ('INVOCATION_ID', 'eabdb786ba2e462999534ae64770f30c'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('RMW_IMPLEMENTAITON', 'rwm_cyclonedds_cpp'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('DOTNET_BUNDLE_EXTRACT_BASE_DIR', '/home/raz/.cache/dotnet_bundle_extract'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/tmp/ssh-XXXXXXwHXtDQ/agent.2012353'), ('ROS_DOMAIN_ID', '1'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:34791990-b6e8-48d7-a2be-a058309d3d6f'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/build/storm_gazebo_magnet'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[2.002856] (-) TimerEvent: {}
+[2.039032] (storm_gazebo_magnet) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/storm_gazebo_dipole_magnet.dir/src/dipole_magnet.cc.o\x1b[0m\n'}
+[2.103045] (-) TimerEvent: {}
+[2.203347] (-) TimerEvent: {}
+[2.303653] (-) TimerEvent: {}
+[2.403994] (-) TimerEvent: {}
+[2.504322] (-) TimerEvent: {}
+[2.604646] (-) TimerEvent: {}
+[2.704988] (-) TimerEvent: {}
+[2.805298] (-) TimerEvent: {}
+[2.905601] (-) TimerEvent: {}
+[3.005914] (-) TimerEvent: {}
+[3.106259] (-) TimerEvent: {}
+[3.206591] (-) TimerEvent: {}
+[3.307014] (-) TimerEvent: {}
+[3.407328] (-) TimerEvent: {}
+[3.507643] (-) TimerEvent: {}
+[3.607867] (-) TimerEvent: {}
+[3.708192] (-) TimerEvent: {}
+[3.808435] (-) TimerEvent: {}
+[3.908783] (-) TimerEvent: {}
+[4.009029] (-) TimerEvent: {}
+[4.109335] (-) TimerEvent: {}
+[4.209648] (-) TimerEvent: {}
+[4.309895] (-) TimerEvent: {}
+[4.410200] (-) TimerEvent: {}
+[4.510510] (-) TimerEvent: {}
+[4.610739] (-) TimerEvent: {}
+[4.711068] (-) TimerEvent: {}
+[4.811383] (-) TimerEvent: {}
+[4.911614] (-) TimerEvent: {}
+[5.011840] (-) TimerEvent: {}
+[5.112163] (-) TimerEvent: {}
+[5.212486] (-) TimerEvent: {}
+[5.312711] (-) TimerEvent: {}
+[5.412927] (-) TimerEvent: {}
+[5.513175] (-) TimerEvent: {}
+[5.613484] (-) TimerEvent: {}
+[5.713704] (-) TimerEvent: {}
+[5.814000] (-) TimerEvent: {}
+[5.889703] (storm_gazebo_magnet) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX shared library libstorm_gazebo_dipole_magnet.so\x1b[0m\n'}
+[5.914191] (-) TimerEvent: {}
+[6.014504] (-) TimerEvent: {}
+[6.097144] (storm_gazebo_magnet) StdoutLine: {'line': b'[100%] Built target storm_gazebo_dipole_magnet\n'}
+[6.106929] (storm_gazebo_magnet) CommandEnded: {'returncode': 0}
+[6.107306] (storm_gazebo_magnet) JobProgress: {'identifier': 'storm_gazebo_magnet', 'progress': 'install'}
+[6.113288] (storm_gazebo_magnet) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/build/storm_gazebo_magnet'], 'cwd': '/home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/build/storm_gazebo_magnet', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_IL:en'), ('USER', 'raz'), ('SSH_AGENT_PID', '2012354'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/raz'), ('OLDPWD', '/home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/src'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1963465'), ('SYSTEMD_EXEC_PID', '1963791'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '1968984'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'raz'), ('JOURNAL_STREAM', '8:15365063'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'raz'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/usr/lib/dotnet/dotnet:/home/raz/.cargo/bin:/home/raz/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/raz/.dotnet/tools'), ('SESSION_MANAGER', 'local/raz-lab:@/tmp/.ICE-unix/1963764,unix/raz-lab:/tmp/.ICE-unix/1963764'), ('INVOCATION_ID', 'eabdb786ba2e462999534ae64770f30c'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('RMW_IMPLEMENTAITON', 'rwm_cyclonedds_cpp'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('DOTNET_BUNDLE_EXTRACT_BASE_DIR', '/home/raz/.cache/dotnet_bundle_extract'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/tmp/ssh-XXXXXXwHXtDQ/agent.2012353'), ('ROS_DOMAIN_ID', '1'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:34791990-b6e8-48d7-a2be-a058309d3d6f'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/build/storm_gazebo_magnet'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[6.114709] (-) TimerEvent: {}
+[6.119276] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[6.119431] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Installing: /home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/install/storm_gazebo_magnet/lib/storm_gazebo_magnet/libstorm_gazebo_dipole_magnet.so\n'}
+[6.121158] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Set runtime path of "/home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/install/storm_gazebo_magnet/lib/storm_gazebo_magnet/libstorm_gazebo_dipole_magnet.so" to ""\n'}
+[6.121267] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Installing: /home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/install/storm_gazebo_magnet/share/ament_index/resource_index/package_run_dependencies/storm_gazebo_magnet\n'}
+[6.121303] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Installing: /home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/install/storm_gazebo_magnet/share/ament_index/resource_index/parent_prefix_path/storm_gazebo_magnet\n'}
+[6.121337] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Installing: /home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/install/storm_gazebo_magnet/share/storm_gazebo_magnet/environment/ament_prefix_path.sh\n'}
+[6.121368] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Installing: /home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/install/storm_gazebo_magnet/share/storm_gazebo_magnet/environment/ament_prefix_path.dsv\n'}
+[6.121435] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Installing: /home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/install/storm_gazebo_magnet/share/storm_gazebo_magnet/environment/path.sh\n'}
+[6.121476] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Installing: /home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/install/storm_gazebo_magnet/share/storm_gazebo_magnet/environment/path.dsv\n'}
+[6.121535] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Installing: /home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/install/storm_gazebo_magnet/share/storm_gazebo_magnet/local_setup.bash\n'}
+[6.121573] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Installing: /home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/install/storm_gazebo_magnet/share/storm_gazebo_magnet/local_setup.sh\n'}
+[6.121604] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Installing: /home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/install/storm_gazebo_magnet/share/storm_gazebo_magnet/local_setup.zsh\n'}
+[6.121740] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Installing: /home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/install/storm_gazebo_magnet/share/storm_gazebo_magnet/local_setup.dsv\n'}
+[6.121815] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Installing: /home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/install/storm_gazebo_magnet/share/storm_gazebo_magnet/package.dsv\n'}
+[6.121850] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Installing: /home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/install/storm_gazebo_magnet/share/ament_index/resource_index/packages/storm_gazebo_magnet\n'}
+[6.121880] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Installing: /home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/install/storm_gazebo_magnet/share/storm_gazebo_magnet/cmake/storm_gazebo_magnetConfig.cmake\n'}
+[6.121908] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Installing: /home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/install/storm_gazebo_magnet/share/storm_gazebo_magnet/cmake/storm_gazebo_magnetConfig-version.cmake\n'}
+[6.121936] (storm_gazebo_magnet) StdoutLine: {'line': b'-- Installing: /home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/install/storm_gazebo_magnet/share/storm_gazebo_magnet/package.xml\n'}
+[6.122922] (storm_gazebo_magnet) CommandEnded: {'returncode': 0}
+[6.136856] (storm_gazebo_magnet) JobEnded: {'identifier': 'storm_gazebo_magnet', 'rc': 0}
+[6.137337] (-) EventReactorShutdown: {}

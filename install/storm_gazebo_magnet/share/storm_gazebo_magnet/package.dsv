@@ -1,0 +1,8 @@
+source;share/storm_gazebo_magnet/hook/cmake_prefix_path.ps1
+source;share/storm_gazebo_magnet/hook/cmake_prefix_path.dsv
+source;share/storm_gazebo_magnet/hook/cmake_prefix_path.sh
+source;share/storm_gazebo_magnet/local_setup.bash
+source;share/storm_gazebo_magnet/local_setup.dsv
+source;share/storm_gazebo_magnet/local_setup.ps1
+source;share/storm_gazebo_magnet/local_setup.sh
+source;share/storm_gazebo_magnet/local_setup.zsh

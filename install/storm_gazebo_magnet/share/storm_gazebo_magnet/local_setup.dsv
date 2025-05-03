@@ -1,0 +1,2 @@
+source;share/storm_gazebo_magnet/environment/ament_prefix_path.sh
+source;share/storm_gazebo_magnet/environment/path.sh

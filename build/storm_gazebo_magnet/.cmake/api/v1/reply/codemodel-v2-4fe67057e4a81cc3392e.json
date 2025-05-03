@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-28819bc79eb038f46c35.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10.2"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "storm_gazebo_magnet",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "storm_gazebo_dipole_magnet::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-storm_gazebo_dipole_magnet-75b2cf4d91e0d5918960.json",
+					"name" : "storm_gazebo_dipole_magnet",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "storm_gazebo_magnet_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-storm_gazebo_magnet_uninstall-d83b4413e4f8660eaa18.json",
+					"name" : "storm_gazebo_magnet_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-2b6453ec3ad522668504.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet/build/storm_gazebo_magnet",
+		"source" : "/home/raz/gazebo__custom_plugins/storm_gazebo_ros_magnet"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

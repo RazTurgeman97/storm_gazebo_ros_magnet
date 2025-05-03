@@ -16,269 +16,107 @@
  * Author: Addisu Z. Taddese
  */
 
-#include <boost/bind.hpp>
-#include <boost/thread.hpp>
-#include <boost/thread/mutex.hpp>
+#include <ignition/gazebo/System.hh>
+#include <ignition/gazebo/Model.hh>
+#include <ignition/gazebo/components/Pose.hh>
+#include <ignition/plugin/Register.hh>
+#include <ignition/math/Vector3.hh>
+#include <rclcpp/rclcpp.hpp>
+#include <std_msgs/msg/bool.hpp>
+#include <memory>
+#include <cmath>
 
-#include <ros/advertise_options.h>
-#include <ros/callback_queue.h>
-#include <ros/ros.h>
-
-#include <iostream>
-#include <vector>
-#include <cstdint>
-
-#include "storm_gazebo_ros_magnet/dipole_magnet.h"
-
-using namespace gazebo;
-using namespace ignition;
-
-DipoleMagnet::DipoleMagnet(): ModelPlugin() {
-  this->connect_count = 0;
-}
-
-DipoleMagnet::~DipoleMagnet() {
-  this->update_connection.reset();
-  if (this->mag->controllable) {
-    this->queue.clear();
-    this->queue.disable();
-    this->rosnode->shutdown();
-    this->callback_queue_thread.join();
-    delete this->rosnode;
-  }
-  if (this->mag){
-    DipoleMagnetContainer::Get().Remove(this->mag);
-  }
-}
-
-void DipoleMagnet::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf) {
-  // Store the pointer to the model
-  this->model = _parent;
-  this->world = _parent->GetWorld();
-  gzdbg << "Loading DipoleMagnet plugin" << std::endl;
-
-  this->mag = std::make_shared<DipoleMagnetContainer::Magnet>();
-
-  // load parameters
-  this->robot_namespace = "";
-  if (_sdf->HasElement("robotNamespace"))
-    this->robot_namespace = _sdf->GetElement("robotNamespace")->Get<std::string>() + "/";
-
-  if(!_sdf->HasElement("bodyName")) {
-    gzerr << "DipoleMagnet plugin missing <bodyName>, cannot proceed" << std::endl;
-    return;
-  }else {
-    this->link_name = _sdf->GetElement("bodyName")->Get<std::string>();
-  }
-
-  this->link = this->model->GetLink(this->link_name);
-  if(!this->link){
-    gzerr << "Error: link named " << this->link_name << " does not exist" << std::endl;
-    return;
-  }
-
-  this->inertial = this->link->GetInertial();
-  if(!this->inertial){
-    gzerr << "Error: inertial of the link named " << this->link_name << " does not loaded" << std::endl;
-    return;
-  }
-  else {
-    this->mass = this->inertial->Mass();
-    this->Ixx = this->inertial->IXX();
-    this->Iyy = this->inertial->IYY();
-    this->Izz = this->inertial->IZZ();
-  }
-
-  this->mag->controllable = false;
-  if (_sdf->HasElement("controllable"))
-  {
-    this->mag->controllable = _sdf->GetElement("controllable")->Get<bool>();
-  }
-
-  if (_sdf->HasElement("calculate")){
-    this->mag->calculate = _sdf->Get<bool>("calculate");
-  } else
-    this->mag->calculate = true;
-
-  if (_sdf->HasElement("xyzOffset")){
-    this->mag->offset.Pos() = _sdf->Get<math::Vector3d>("xyzOffset");
-  }
-
-  if (_sdf->HasElement("rpyOffset")){
-    math::Vector3d rpy_offset = _sdf->Get<math::Vector3d>("rpyOffset");
-    this->mag->offset.Rot() = math::Quaternion<double>(rpy_offset);
-  }
-
-  if (_sdf->HasElement("xyzRange")){
-    this->mag->range.Pos() = _sdf->Get<math::Vector3d>("xyzRange");
-  }
-
-  if (_sdf->HasElement("xyzVelLimit")){
-    this->mag->vel_limit.Pos() = _sdf->Get<math::Vector3d>("xyzVelLimit");
-  }
-
-  if (this->mag->controllable) {
-    if (!_sdf->HasElement("topicNs"))
+namespace storm_gazebo_magnet
+{
+    class DipoleMagnet : public ignition::gazebo::System,
+                         public ignition::gazebo::ISystemConfigure,
+                         public ignition::gazebo::ISystemPreUpdate
     {
-      gzmsg << "DipoleMagnet plugin missing <topicNs>," 
-          "will publish on namespace " << this->link_name << std::endl;
-    }
-    else {
-      this->topic_ns = _sdf->GetElement("topicNs")->Get<std::string>();
-    }
+    private:
+        ignition::gazebo::Entity modelEntity;
+        ignition::math::Vector3d magneticForce;
+        double magneticMomentWheel;   // Magnetic moment of the wheel (A·m²)
+        double magneticMomentSurface; // Magnetic moment of the surface (A·m²)
+        double distance;              // Distance between wheel and surface (m)
+        double angle;                 // Angle between dipoles (rad)
 
-    if (!ros::isInitialized())
-    {
-      gzerr << "A ROS node for Gazebo has not been initialized, unable to load "
-        "plugin. Load the Gazebo system plugin 'libgazebo_ros_api_plugin.so' in "
-        "the gazebo_ros package. If you want to use this plugin without ROS, "
-        "set <shouldPublish> to false" << std::endl;
-      return;
-    }
+    public:
+        DipoleMagnet()
+            : magneticForce(0, 0, 0),
+              magneticMomentWheel(1.0),   // Default value
+              magneticMomentSurface(5.0), // Default value
+              distance(0.01),             // Default value (1 cm)
+              angle(0.0)                  // Default: aligned dipoles
+        {
+        }
 
-    this->rosnode = new ros::NodeHandle(this->robot_namespace);
-    this->rosnode->setCallbackQueue(&this->queue);
+        void Configure(const ignition::gazebo::Entity &_entity,
+                       const std::shared_ptr<const sdf::Element> &_sdf,
+                       ignition::gazebo::EntityComponentManager &_ecm,
+                       ignition::gazebo::EventManager & /*_eventMgr*/) override
+        {
+            this->modelEntity = _entity;
 
-    this->magnet_sub = this->rosnode->subscribe(
-        this->topic_ns + "/cmd", 1, &DipoleMagnet::Magnet_CB, this);
+            // Parse SDF parameters
+            if (_sdf->HasElement("magneticMomentWheel"))
+            {
+                this->magneticMomentWheel = _sdf->Get<double>("magneticMomentWheel");
+            }
+            if (_sdf->HasElement("magneticMomentSurface"))
+            {
+                this->magneticMomentSurface = _sdf->Get<double>("magneticMomentSurface");
+            }
+            if (_sdf->HasElement("distance"))
+            {
+                this->distance = _sdf->Get<double>("distance");
+            }
+            if (_sdf->HasElement("angle"))
+            {
+                this->angle = _sdf->Get<double>("angle");
+            }
+        }
 
-    // Custom Callback Queue
-    this->callback_queue_thread = boost::thread( boost::bind( &DipoleMagnet::QueueThread,this ) );
-  }
+        void PreUpdate(const ignition::gazebo::UpdateInfo &_info,
+                       ignition::gazebo::EntityComponentManager &_ecm) override
+        {
+            if (_info.paused)
+                return;
 
-  this->debug = false;
-  if (_sdf->HasElement("debug")) {
-    this->debug = _sdf->GetElement("debug")->Get<bool>();
-  }
+            // Calculate magnetic adhesion force
+            this->CalculateMagneticAdhesionForce();
 
-  this->mag->model_id = this->model->GetId();
+            // Apply the force to the model's link
+            auto poseComp = _ecm.Component<ignition::gazebo::components::Pose>(this->modelEntity);
+            if (poseComp)
+            {
+                // Retrieve the current pose
+                auto pose = poseComp->Data();
 
-  gzmsg << "Loaded Gazebo dipole magnet plugin on " << this->model->GetName() << std::endl;
+                // Simulate force application (e.g., update Z position)
+                pose.Pos().Z() += this->magneticForce.Z();
+                _ecm.SetComponentData<ignition::gazebo::components::Pose>(this->modelEntity, pose);
+            }
+        }
 
-  DipoleMagnetContainer::Get().Add(this->mag);
+        void CalculateMagneticAdhesionForce()
+        {
+            // Physical constants
+            constexpr double mu0 = 4 * M_PI * 1e-7; // Permeability of free space
 
-  // Listen to the update event. This event is broadcast every
-  // simulation iteration.
-  this->update_connection = event::Events::ConnectWorldUpdateBegin(
-      boost::bind(&DipoleMagnet::OnUpdate, this, _1));
-}
+            // Magnetic force calculation
+            double forceMagnitude = (3 * mu0 * this->magneticMomentWheel * this->magneticMomentSurface) /
+                                     (4 * M_PI * std::pow(this->distance, 4)) *
+                                     (2 * std::pow(std::cos(this->angle), 2) - 1);
 
-void DipoleMagnet::Connect() {
-  this->connect_count++;
-}
+            // Apply force in the Z direction to counteract gravity
+            this->magneticForce = ignition::math::Vector3d(0, 0, std::abs(forceMagnitude));
+        }
+    };
+} // namespace storm_gazebo_magnet
 
-void DipoleMagnet::Disconnect() {
-  this->connect_count--;
-}
+IGNITION_ADD_PLUGIN(storm_gazebo_magnet::DipoleMagnet,
+                    ignition::gazebo::System,
+                    ignition::gazebo::ISystemConfigure,
+                    ignition::gazebo::ISystemPreUpdate)
 
-void DipoleMagnet::QueueThread() {
-  static const double timeout = 0.01;
-
-  while (this->rosnode->ok())
-  {
-    this->queue.callAvailable(ros::WallDuration(timeout));
-  }
-}
-
-// Called by the world update start event
-void DipoleMagnet::OnUpdate(const common::UpdateInfo & /*_info*/) {
-
-  if (!this->mag->calculate)
-    return;
-
-  // Calculate the force from all other magnets
-  math::Pose3d p_self = this->link->WorldPose();
-  this->mag->pose = p_self;
-  double mass_self = this->mass;
-  double Ixx_self = this->Ixx;
-  double Iyy_self = this->Iyy;
-  double Izz_self = this->Izz;
-
-  DipoleMagnetContainer& dp = DipoleMagnetContainer::Get();
-
-  for(DipoleMagnetContainer::MagnetPtrV::iterator it = dp.magnets.begin(); it < dp.magnets.end(); it++){
-    std::shared_ptr<DipoleMagnetContainer::Magnet> mag_other = *it;
-    if (mag_other->model_id != this->mag->model_id && !this->mag->controllable && mag_other->controllable) {
-      math::Pose3d p_other = mag_other->pose;
-      math::Pose3d offset_other = mag_other->offset;
-      math::Pose3d range_other = mag_other->range;
-
-      math::Vector3d v_self = this->link->WorldLinearVel();
-      math::Vector3d v_cmd(0, 0, 0);
-      math::Vector3d force(0, 0, 0);
-      math::Vector3d w_self = this->link->WorldAngularVel();
-      math::Vector3d w_cmd(0, 0, 0);
-      math::Vector3d torque(0, 0, 0);
-
-      math::Vector3d p_err = p_self.Pos() + p_other.Rot().RotateVector(offset_other.Pos()) - p_other.Pos();
-      math::Vector3d p_err_inv = p_other.Rot().Inverse().RotateVector(p_err);
-      math::Vector3d e_err = (p_self.Rot() * offset_other.Rot().Inverse() * p_other.Rot().Inverse()).Euler();
-      
-      // velocity, torque are only working on the magnet with no controllable
-      if (mag_other->magnet_cmd
-          && std::abs(p_err_inv.X()) < range_other.Pos().X()
-          && std::abs(p_err_inv.Y()) < range_other.Pos().Y()
-          && std::abs(p_err_inv.Z()) < range_other.Pos().Z()) {
-        v_cmd = 10 * -p_err;
-        this->LimitVelocity(v_cmd, mag_other->vel_limit.Pos());
-        force = 10 * (v_cmd - v_self);
-        force *= mass_self;
-        force.Z() += mass_self * 9.8;
-
-        w_cmd = 10 * -e_err;
-        torque = 10 * (w_cmd - w_self);
-        torque.X() *= Ixx_self;
-        torque.Y() *= Iyy_self;
-        torque.Z() *= Izz_self;
-      }
-      else {
-        force = 0;
-        torque = 0;
-      }
-      this->link->AddForce(force);
-      this->link->AddTorque(torque);
-
-      if (this->debug) {
-        system("clear");
-        std::cout << std::setprecision(3);
-        std::cout << "[magnet_msg] \t" << (mag_other->magnet_cmd ? "true" : "false") << std::endl;
-        std::cout << "[mass_self] \t" << mass_self << std::endl;
-        std::cout << "[position] \t" << p_self << std::endl;
-        std::cout << "[vel_cmd] \t" << v_cmd << std::endl;
-        std::cout << "[velocity] \t" << v_self << std::endl;
-        std::cout << "[euler_self] \t" << p_self.Rot().Euler() << std::endl;
-        std::cout << "[euler_other] \t" << p_other.Rot().Euler() << std::endl;
-        std::cout << "[w_cmd] \t" << w_cmd << std::endl;
-        std::cout << "[Ang. Vel.] \t" << w_self << std::endl;
-        std::cout << "[force] \t" << force << std::endl;
-        std::cout << "[torque] \t" << torque << std::endl
-                  << std::endl;
-      }
-    }
-  }
-}
-
-void DipoleMagnet::LimitVelocity(math::Vector3d& v_cmd,
-                                 math::Vector3d& v_limit) {
-  if (v_cmd.X() > v_limit.X())
-    v_cmd.X() = v_limit.X();
-  if (v_cmd.X() < -v_limit.X())
-    v_cmd.X() = -v_limit.X();
-
-  if (v_cmd.Y() > v_limit.Y())
-    v_cmd.Y() = v_limit.Y();
-  if (v_cmd.Y() < -v_limit.Y())
-    v_cmd.Y() = -v_limit.Y();
-
-  if (v_cmd.Z() > v_limit.Z())
-    v_cmd.Z() = v_limit.Z();
-  if (v_cmd.Z() < -v_limit.Z())
-    v_cmd.Z() = -v_limit.Z();
-}
-
-void DipoleMagnet::Magnet_CB(const std_msgs::Bool& msg) {
-  this->mag->magnet_cmd = msg.data;
-}
-
-// Register this plugin with the simulator
-GZ_REGISTER_MODEL_PLUGIN(DipoleMagnet)
+IGNITION_ADD_PLUGIN_ALIAS(storm_gazebo_magnet::DipoleMagnet, "storm_gazebo_magnet::DipoleMagnet")

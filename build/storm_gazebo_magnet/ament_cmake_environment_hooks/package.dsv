@@ -1,0 +1,4 @@
+source;share/storm_gazebo_magnet/local_setup.bash
+source;share/storm_gazebo_magnet/local_setup.dsv
+source;share/storm_gazebo_magnet/local_setup.sh
+source;share/storm_gazebo_magnet/local_setup.zsh
